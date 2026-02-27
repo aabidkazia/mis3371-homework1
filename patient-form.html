@@ -1,1 +1,143 @@
-<!DOCTYPE html>\n<html lang="en">\n<head>\n    <meta charset="UTF-8">\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n    <title>Patient Registration Form</title>\n    <link rel="stylesheet" href="styles.css">\n    <script>\n        document.addEventListener('DOMContentLoaded', function() {\n            const dateTime = new Date().toUTCString();\n            document.getElementById('currentDateTime').textContent = 'Current Date and Time: ' + dateTime;\n        });\n    </script>\n</head>\n<body>\n    <!-- Program Name: Patient Registration Form\n         Author: aabidkazia\n         Date Created: 2026-02-27\n         Date Last Edited: 2026-02-27\n         Version: 1.0 -->\n    <header>\n        <h1 id="currentDateTime">Current Date and Time: </h1>\n        <h2>Patient Registration Form</h2>\n    </header>\n    <form>\n        <label for="firstName">First Name:</label>\n        <input type="text" id="firstName" name="firstName" required>\n        <label for="middleInitial">Middle Initial:</label>\n        <input type="text" id="middleInitial" name="middleInitial" maxlength="1">\n        <label for="lastName">Last Name:</label>\n        <input type="text" id="lastName" name="lastName" required>\n        <label for="dob">Date of Birth:</label>\n        <input type="date" id="dob" name="dob" required>\n        <label for="ssn">Social Security Number:</label>\n        <input type="text" id="ssn" name="ssn" required>\n        <label for="address">Address:</label>\n        <input type="text" id="addressLine1" name="addressLine1" required>\n        <input type="text" id="addressLine2" name="addressLine2">\n        <label for="city">City:</label>\n        <input type="text" id="city" name="city" required>\n        <label for="state">State:</label>\n        <select id="state" name="state" required>\n            <option value="">Select...</option>\n            <option value="CA">California</option>\n            <option value="TX">Texas</option>\n            <option value="NY">New York</option>\n        </select>\n        <label for="zip">Zip Code:</label>\n        <input type="text" id="zip" name="zip" required>\n        <label for="email">Email:</label>\n        <input type="email" id="email" name="email" required>\n        <label for="phone">Phone:</label>\n        <input type="tel" id="phone" name="phone" required>\n        <label for="userId">User ID:</label>\n        <input type="text" id="userId" name="userId" required>\n        <label for="password">Password:</label>\n        <input type="password" id="password" name="password" required>\n        <fieldset>\n            <legend>Medical History:</legend>\n            <label><input type="checkbox" name="medicalHistory" value="disease1"> Disease 1</label>\n            <label><input type="checkbox" name="medicalHistory" value="disease2"> Disease 2</label>\n        </fieldset>\n        <fieldset>\n            <legend>Gender:</legend>\n            <label><input type="radio" name="gender" value="male"> Male</label>\n            <label><input type="radio" name="gender" value="female"> Female</label>\n        </fieldset>\n        <fieldset>\n            <legend>Insurance Status:</legend>\n            <label><input type="radio" name="insurance" value="insured"> Insured</label>\n            <label><input type="radio" name="insurance" value="uninsured"> Uninsured</label>\n        </fieldset>\n        <label for="healthRating">Health Rating:</label>\n        <input type="range" id="healthRating" name="healthRating" min="1" max="10">\n        <label for="symptoms">Symptoms:</label>\n        <textarea id="symptoms" name="symptoms"></textarea>\n        <button type="submit">Submit</button>\n        <button type="reset">Reset</button>\n    </form>\n    <footer>\n        <p>&copy; 2026 Patient Registration</p>\n    </footer>\n</body>\n</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Patient Registration Form</title>
+</head>
+<body>
+    <!-- Banner Section -->
+    <header>
+        <h1>Welcome to the Patient Registration</h1>
+        <p id="datetime"></p>
+        <script>
+            // Displaying current date and time
+            document.getElementById('datetime').innerHTML = new Date().toUTCString();
+        </script>
+    </header>
+
+    <!-- Patient Registration Form -->
+    <form action="thankyou.html" method="POST">
+        <table>
+            <tr>
+                <td><label for="firstName">First Name:</label></td>
+                <td><input type="text" id="firstName" name="firstName" required></td>
+            </tr>
+            <tr>
+                <td><label for="middleInitial">Middle Initial:</label></td>
+                <td><input type="text" id="middleInitial" name="middleInitial" maxlength="1"></td>
+            </tr>
+            <tr>
+                <td><label for="lastName">Last Name:</label></td>
+                <td><input type="text" id="lastName" name="lastName" required></td>
+            </tr>
+            <tr>
+                <td><label for="dob">Date of Birth:</label></td>
+                <td><input type="date" id="dob" name="dob" required></td>
+            </tr>
+            <tr>
+                <td><label for="ssn">Social Security:</label></td>
+                <td><input type="text" id="ssn" name="ssn" required></td>
+            </tr>
+            <tr>
+                <td><label for="address">Address:</label></td>
+                <td><input type="text" id="address1" name="address1" required><br>
+                <input type="text" id="address2" name="address2"></td>
+            </tr>
+            <tr>
+                <td><label for="city">City:</label></td>
+                <td><input type="text" id="city" name="city" required></td>
+            </tr>
+            <tr>
+                <td><label for="state">State:</label></td>
+                <td>
+                    <select id="state" name="state" required>
+                        <option value="">Select State</option>
+                        <option value="state1">State 1</option>
+                        <option value="state2">State 2</option>
+                        <!-- Add more states as needed -->
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="zip">Zip Code:</label></td>
+                <td><input type="text" id="zip" name="zip" required></td>
+            </tr>
+            <tr>
+                <td><label for="email">Email:</label></td>
+                <td><input type="email" id="email" name="email" required></td>
+            </tr>
+            <tr>
+                <td><label for="phone">Phone:</label></td>
+                <td><input type="tel" id="phone" name="phone" required></td>
+            </tr>
+            <tr>
+                <td><label for="userId">User ID:</label></td>
+                <td><input type="text" id="userId" name="userId" required></td>
+            </tr>
+            <tr>
+                <td><label for="password">Password:</label></td>
+                <td><input type="password" id="password" name="password" required></td>
+            </tr>
+            <tr>
+                <td><label for="rePassword">Re-enter Password:</label></td>
+                <td><input type="password" id="rePassword" name="rePassword" required></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <label>Medical History:</label><br>
+                    <input type="checkbox" name="history" value="condition1"> Condition 1<br>
+                    <input type="checkbox" name="history" value="condition2"> Condition 2<br>
+                    <!-- Add more checkboxes as needed -->
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <label>Gender:</label><br>
+                    <input type="radio" name="gender" value="male" required> Male<br>
+                    <input type="radio" name="gender" value="female"> Female<br>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <label>Vaccination Status:</label><br>
+                    <input type="radio" name="vaccination" value="yes" required> Yes<br>
+                    <input type="radio" name="vaccination" value="no"> No<br>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <label>Insurance Status:</label><br>
+                    <input type="radio" name="insurance" value="insured" required> Insured<br>
+                    <input type="radio" name="insurance" value="uninsured"> Uninsured<br>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="healthRating">Health Rating:</label></td>
+                <td><input type="range" id="healthRating" name="healthRating" min="1" max="10"></td>
+            </tr>
+            <tr>
+                <td><label for="symptoms">Symptoms:</label></td>
+                <td><textarea id="symptoms" name="symptoms"></textarea></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button type="button" onclick="clearForm()">Clear</button>
+                    <button type="submit">Submit</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <footer>
+        <button onclick="location.href='contact.html'">Contact Us</button>
+    </footer>
+
+    <script>
+        function clearForm() {
+            document.querySelector('form').reset();
+        }
+    </script>
+</body>
+</html>
